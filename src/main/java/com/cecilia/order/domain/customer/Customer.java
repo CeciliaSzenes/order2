@@ -2,26 +2,24 @@ package com.cecilia.order.domain.customer;
 
 import java.util.Objects;
 
-public class Customer {
-
-    private static int counter = 1;
-
+public class Customer { ;
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
     private String address;
     private String phoneNumber;
-    private int identifier;
 
 
 
-    public Customer(String firstName, String lastName, String email, String address, String phoneNumber, int identifier) {
+
+    public Customer(String id, String firstName, String lastName, String email, String address, String phoneNumber) {
+        this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.phoneNumber=phoneNumber;
-        this.identifier=identifier;
     }
 
     public String getFirstName() {
@@ -40,7 +38,7 @@ public class Customer {
         return address;
     }
 
-    public int getIdentifier(){ return identifier;}
+    public String getId(){return id;}
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -51,7 +49,7 @@ public class Customer {
         if (this == o) return true;
         if (!(o instanceof Customer)) return false;
         Customer customer = (Customer) o;
-        return getIdentifier() == customer.getIdentifier() &&
+        return getId() == customer.getId() &&
                 Objects.equals(getFirstName(), customer.getFirstName()) &&
                 Objects.equals(getLastName(), customer.getLastName()) &&
                 Objects.equals(getEmail(), customer.getEmail()) &&
@@ -61,18 +59,18 @@ public class Customer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFirstName(), getLastName(), getEmail(), getAddress(), getPhoneNumber(), getIdentifier());
+        return Objects.hash(getFirstName(), getLastName(), getEmail(), getAddress(), getPhoneNumber(), getId());
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "firstName='" + firstName + '\'' +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", identifier=" + identifier +
                 '}';
     }
 }

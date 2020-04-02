@@ -3,21 +3,22 @@ package com.cecilia.order.domain.customer;
 import java.util.Objects;
 
 public class CustomerDto {
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
     private String address;
     private String phoneNumber;
-    private int identifier;
 
 
-    public CustomerDto(String firstName, String lastName, String email, String address, String phoneNumber, int identifier) {
+    public CustomerDto(String id, String firstName, String lastName, String email, String address, String phoneNumber) {
+        this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.identifier=identifier;
+
     }
 
     public String getFirstName() {
@@ -40,8 +41,8 @@ public class CustomerDto {
         return phoneNumber;
     }
 
-    public int getIdentifier(){
-        return identifier;
+    public String getId(){
+        return id;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class CustomerDto {
         if (this == o) return true;
         if (!(o instanceof CustomerDto)) return false;
         CustomerDto that = (CustomerDto) o;
-        return getIdentifier() == that.getIdentifier() &&
+        return getId() == that.getId() &&
                 Objects.equals(getFirstName(), that.getFirstName()) &&
                 Objects.equals(getLastName(), that.getLastName()) &&
                 Objects.equals(getEmail(), that.getEmail()) &&
@@ -59,6 +60,6 @@ public class CustomerDto {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFirstName(), getLastName(), getEmail(), getAddress(), getPhoneNumber(), getIdentifier());
+        return Objects.hash(getFirstName(), getLastName(), getEmail(), getAddress(), getPhoneNumber(), getId());
     }
 }

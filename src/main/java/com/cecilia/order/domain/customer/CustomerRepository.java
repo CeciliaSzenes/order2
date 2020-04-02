@@ -2,23 +2,23 @@ package com.cecilia.order.domain.customer;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 @Component
 public class CustomerRepository {
 
-    List<Customer> customerList = new ArrayList<>();
+    private Map<String, Customer> customerMap = new HashMap<>();
 
     public void addCustomer(Customer customer) {
-        customerList.add(customer);
+        customerMap.put(customer.getId(), customer);
     }
 
-    public List<Customer> getAllCustomers(){
-        return customerList;
+    public Collection<Customer> getAllCustomers(){
+        return customerMap.values();
     }
 
-    public Customer viewCustomer(int id){
-        return customerList.get(id);
+    public Customer viewCustomer(String id){
+        return customerMap.get(id);
     }
 
 }

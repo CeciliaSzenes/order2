@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -27,25 +28,24 @@ public class CustomerController {
     @PostMapping(produces = "application/json", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public CustomerDto addCustomer(@RequestBody CustomerDto customerDto) {
-        Customer customerToBeAdded = new Customer(customerDto.getFirstName(), customerDto.getLastName(), customerDto.getEmail(), customerDto.getAddress(), customerDto.getPhoneNumber(), customerDto.getIdentifier());
-        return customerMapper.transformIntoDto(customerToBeAdded);
+        Customer customerToBeAdded = new Customer(customerDto.getId(), customerDto.getFirstName(), customerDto.getLastName(), customerDto.getEmail(), customerDto.getAddress(), customerDto.getPhoneNumber());
+        customerRepository.addCustomer(customerToBeAdded);
+        return customerDto;
     }
 
-    @GetMapping(produces = "application/json", path = "/all")
+    @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
-    public List<CustomerDto> getListOfCustomers() {
-        List<Customer> listOfAllCustomers = customerRepository.getAllCustomers();
-        List<CustomerDto> listToBeReturned = new ArrayList<>();
-        for (Customer customer : listOfAllCustomers) {
-            listToBeReturned.add(customerMapper.transformIntoDto(customer));
-        }
-        return listToBeReturned;
+    public List<CustomerDto> getAllCustomers() {
+        Collection<Customer> customerList= customerRepository.getAllCustomers();
+        List<CustomerDto> toBeReturned=new ArrayList<CustomerDto>(){};
+        for (Customer customers:customerList) {
+            toBeReturned.add(customerMapper.transformIntoDto(customers));}
+        return toBeReturned;
     }
 
     @GetMapping(produces = "application/json", path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CustomerDto viewSingleCustomer(@PathVariable("id") int id) {
-        Customer toBeViewed = customerRepository.viewCustomer(id);
-        return customerMapper.transformIntoDto(toBeViewed);
+    public CustomerDto viewCustomer(@PathVariable String id) {
+        return customerMapper.transformIntoDto(customerRepository.viewCustomer(id));
     }
 }

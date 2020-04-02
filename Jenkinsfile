@@ -22,5 +22,4 @@ pipeline {
             junit '**/target/surefire-reports/*.xml'
         }
     }
->>>>>>> Stashed changes
 }
