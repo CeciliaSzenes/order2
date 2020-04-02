@@ -26,7 +26,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - Does the phonenumber include the country code?
  > IT DOES NOT CHECK IT
  - Did you go for a similar architecture as digibooky?
- > LESS COMPLICATED.
+ > NO, I WENT FOR LESS COMPLICATED.
  - Is your application deployed in the cloud? (Heroku?)
  > NO.
  - ....
@@ -37,7 +37,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [:heavy_check_mark: ] Basic setup / skeleton for Spring Boot & Maven
  - [:heavy_check_mark: ] I have my first REST Controller ready
  - [:heavy_check_mark: ]  I commit/push my code on a regular basis
- - [ ] Swagger is enabled
+ - [:heavy_check_mark: ] Swagger is enabled
 ### Comments:
 ## Story 1
  - [ :heavy_check_mark: ] The functional requirements are implemented
@@ -45,17 +45,17 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [ ] The requirements are unit tested
  - [ ] The requirements are integration tested
  - [ ] Proper logging is setup
- - [ ] I did a "codereview" of my own code before declaring it "done".
- - [:heavy_check_mark: ] I commit/push my code when this story was done
+ - [:heavy_check_mark:] I did a "codereview" of my own code before declaring it "done".
+ - [:heavy_check_mark:] I commit/push my code when this story was done
 ### Comments:
 ## Story 2
- - [ :heavy_check_mark:] The functional requirements are implemented
- - [:heavy_check_mark: ] The requirements are tested with Postman
+ - [:heavy_check_mark:] The functional requirements are implemented
+ - [:heavy_check_mark:] The requirements are tested with Postman
  - [ ] The requirements are unit tested
  - [ ] The requirements are integration tested
  - [ ] Proper logging is setup
- - [ ] I did a "codereview" of my own code before declaring it "done".
- - [ ] I commit/push my code when this story was done
+ - [:heavy_check_mark:] I did a "codereview" of my own code before declaring it "done".
+ - [:heavy_check_mark:] I commit/push my code when this story was done
 ### Comments:
 ## Story 3
  - [ ] The functional requirements are implemented
@@ -67,22 +67,22 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [ ] I commit/push my code when this story was done
 ### Comments: 
 ## Story 7
- - [:heavy_check_mark:  ] The functional requirements are implemented
- - [ ] The requirements are tested with Postman
- - [ ] The requirements are unit tested
+ - [:heavy_check_mark:] The functional requirements are implemented
+ - [:heavy_check_mark:] The requirements are tested with Postman
+ - [:heavy_check_mark:] The requirements are unit tested
  - [ ] The requirements are integration tested
  - [ ] Proper logging is setup
- - [ ] I did a "codereview" of my own code before declaring it "done".
- - [ ] I commit/push my code when this story was done
+ - [:heavy_check_mark:] I did a "codereview" of my own code before declaring it "done".
+ - [:heavy_check_mark:] I commit/push my code when this story was done
 ### Comments: 
 ## Story 8
- - [ :heavy_check_mark: ] The functional requirements are implemented
- - [ ] The requirements are tested with Postman
- - [ ] The requirements are unit tested
+ - [:heavy_check_mark:] The functional requirements are implemented
+ - [:heavy_check_mark:] The requirements are tested with Postman
+ - [:heavy_check_mark:] The requirements are unit tested
  - [ ] The requirements are integration tested
  - [ ] Proper logging is setup
- - [ ] I did a "codereview" of my own code before declaring it "done".
- - [ ] I commit/push my code when this story was done
+ - [:heavy_check_mark:] I did a "codereview" of my own code before declaring it "done".
+ - [:heavy_check_mark:] I commit/push my code when this story was done
 ### Comments: 
 ## Nice-To-Have stories
  - [ ] Story 4
