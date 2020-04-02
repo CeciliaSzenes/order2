@@ -44,10 +44,8 @@ public class CustomerController {
 
     @GetMapping(produces = "application/json", path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CustomerDto viewSingleCustomer(@PathVariable int id) {
+    public CustomerDto viewSingleCustomer(@PathVariable("id") int id) {
         Customer toBeViewed = customerRepository.viewCustomer(id);
         return customerMapper.transformIntoDto(toBeViewed);
-
-
     }
 }

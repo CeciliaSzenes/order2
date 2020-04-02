@@ -1,5 +1,7 @@
 package com.cecilia.order.domain.customer;
 
+import java.util.Objects;
+
 public class CustomerDto {
     private String firstName;
     private String lastName;
@@ -40,5 +42,23 @@ public class CustomerDto {
 
     public int getIdentifier(){
         return identifier;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CustomerDto)) return false;
+        CustomerDto that = (CustomerDto) o;
+        return getIdentifier() == that.getIdentifier() &&
+                Objects.equals(getFirstName(), that.getFirstName()) &&
+                Objects.equals(getLastName(), that.getLastName()) &&
+                Objects.equals(getEmail(), that.getEmail()) &&
+                Objects.equals(getAddress(), that.getAddress()) &&
+                Objects.equals(getPhoneNumber(), that.getPhoneNumber());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getLastName(), getEmail(), getAddress(), getPhoneNumber(), getIdentifier());
     }
 }
