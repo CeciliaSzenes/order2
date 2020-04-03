@@ -9,8 +9,9 @@ public class CustomerRepository {
 
     private Map<String, Customer> customerMap = new HashMap<>();
 
-    public void addCustomer(Customer customer) {
+    public Customer addCustomer(Customer customer) {
         customerMap.put(customer.getId(), customer);
+        return customer;
     }
 
     public Collection<Customer> getAllCustomers(){

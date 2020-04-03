@@ -4,13 +4,13 @@ public class ItemDto {
     private String name;
     private String description;
     private int price;
-    private int amount;
+    private boolean inStock;
 
-    public ItemDto(String name, String description, int price, int amount) {
+    public ItemDto(String name, String description, int price, boolean inStock) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.amount = amount;
+        this.inStock=inStock;
     }
 
     public String getName() {
@@ -25,7 +25,5 @@ public class ItemDto {
         return price;
     }
 
-    public int getAmount() {
-        return amount;
-    }
+    public boolean inStock() {return inStock; }
 }
