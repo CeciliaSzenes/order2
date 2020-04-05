@@ -17,11 +17,14 @@ public class ItemRepository {
     }
 
     public List<Item> getAllItems() {
-        return itemList.stream()
-                .filter(item -> item.inStock())
-                .collect(Collectors.toList());
-        }
-    }
+        if (!itemList.isEmpty()) {
+            return itemList.stream()
+                    .filter(item -> item.inStock())
+                    .collect(Collectors.toList());
+        } else
+            throw new IllegalArgumentException("Hey, no item on the list!!!"); }}
+
+
 
 
 

@@ -10,16 +10,25 @@ public class Customer { ;
     private String address;
     private String phoneNumber;
 
-
-
-
     public Customer(String id, String firstName, String lastName, String email, String address, String phoneNumber) {
+        assertNotEmpty(id);
+        assertNotEmpty(lastName);
+        assertNotEmpty(firstName);
+        assertNotEmpty(email);
+        assertNotEmpty(address);
+        assertNotEmpty(phoneNumber);
         this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.phoneNumber=phoneNumber;
+    }
+
+    private void assertNotEmpty(String text) {
+        if (text.isBlank()) {
+            throw new IllegalArgumentException("Type in the proper data or go away!");
+        }
     }
 
     public String getFirstName() {

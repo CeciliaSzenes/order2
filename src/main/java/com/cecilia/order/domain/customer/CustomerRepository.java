@@ -14,11 +14,11 @@ public class CustomerRepository {
         return customer;
     }
 
-    public Collection<Customer> getAllCustomers(){
+    public Collection<Customer> getAllCustomers() {
         return customerMap.values();
     }
 
-    public Customer viewCustomer(String id){
+    public Customer viewCustomer(String id) {
         return customerMap.get(id);
     }
 

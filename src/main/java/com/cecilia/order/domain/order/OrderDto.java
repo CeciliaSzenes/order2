@@ -20,4 +20,13 @@ public class OrderDto {
     public int getOrderId() {
         return orderId;
     }
+
+    @Override
+    public String toString() {
+        return "OrderDto{" +
+                "itemGroupList=" + itemGroupList +
+                ", orderId=" + orderId +
+                '}';
+    }
 }
+

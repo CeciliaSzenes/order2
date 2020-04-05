@@ -7,6 +7,9 @@ import com.cecilia.order.domain.item.ItemRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping(path="/item")
 public class ItemController {
@@ -24,7 +27,16 @@ public class ItemController {
         Item itemToBeAdded = new Item(itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.inStock());
         return itemMapper.transformItemToDto(itemToBeAdded);
     }
-
+    @GetMapping(produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ItemDto> getAllItems(){
+        List<ItemDto> toBeReturned=new ArrayList<>();
+        List<Item> allItems= itemRepository.getAllItems();
+        for (Item item:allItems){
+            toBeReturned.add(itemMapper.transformItemToDto(item));
+        }
+        return toBeReturned;
+    }
 }
 
 

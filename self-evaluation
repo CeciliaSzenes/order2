@@ -14,15 +14,15 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - Do you have a single-module maven project? Or a multi-module maven project?
  > SINGLE MODULE, FOLLOWING THE ADVICE OF KAREL
  - Are you working test-first?
- > UHM...NO
+ > UHM...NO. BUT I WROTE 4 TESTS OVERALL!
  - Do you have security enabled?
  > I USED TO HAVE BUT I GAVE UP QUICKLY
  - Do you have logging enabled?
- > NO. I MIGHT TRY IT FRIDAY AFTERNOON.
+ > I DID PUT IN LOGGING INTO CUSTOMERCONTROLLER, BUT DO NOT KNOW WHETHER IT WORKS.
  - What happens if the firstname contains numbers? Is this allowed?
- > IN A STRING? WHY NOT? I TRIED IN POSTMAN, IT STILL WORKS
+ > IN A STRING, WHY NOT? I TRIED IN POSTMAN, IT STILL WORKS
  - In which currency are the prices?
- > EURO, OBVIOUSLY. BUT I DO NOT BOTHER ADDING THE CURRENCY TO THE PRICE.
+ > EURO, OBVIOUSLY. BUT I DID NOT ADD THE CURRENCY TO THE PRICE.
  - Does the phonenumber include the country code?
  > IT DOES NOT CHECK IT
  - Did you go for a similar architecture as digibooky?
@@ -44,7 +44,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [ :heavy_check_mark: ] The requirements are tested with Postman
  - [ ] The requirements are unit tested
  - [ ] The requirements are integration tested
- - [ ] Proper logging is setup
+ - [:heavy_check_mark:] Proper logging is setup
  - [:heavy_check_mark:] I did a "codereview" of my own code before declaring it "done".
  - [:heavy_check_mark:] I commit/push my code when this story was done
 ### Comments:
@@ -58,14 +58,18 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [:heavy_check_mark:] I commit/push my code when this story was done
 ### Comments:
 ## Story 3
- - [ ] The functional requirements are implemented
- - [ ] The requirements are tested with Postman
+ - [PARTLY] The functional requirements are implemented
+ - [PARTLY ] The requirements are tested with Postman
  - [ ] The requirements are unit tested
  - [ ] The requirements are integration tested
  - [ ] Proper logging is setup
  - [ ] I did a "codereview" of my own code before declaring it "done".
  - [ ] I commit/push my code when this story was done
 ### Comments: 
+It seems to be working on Postman with posting an OrderDto, I do not know how to enter the complicated Order/ItemGroup/Item into api.
+There was also an issue with "inStock", now it is completely ignored.
+Amount of items in stock: how to put it in code? It is not something the customer enters into api - how to deal with it? (Deduct items from existing stock, etc.)
+Overall, difficulty to put together all different domains (order, customerId, itemGroup, etc.).
 ## Story 7
  - [:heavy_check_mark:] The functional requirements are implemented
  - [:heavy_check_mark:] The requirements are tested with Postman
